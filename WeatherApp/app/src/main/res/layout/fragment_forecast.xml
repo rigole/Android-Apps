@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="350dp"
+        android:layout_height="210dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        app:cardElevation="12dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+          <ImageView
+            android:id="@+id/forecastingId"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:src="@android:drawable/ic_btn_speak_now"/>
+
+
+            <TextView
+                android:id="@+id/forecastTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
+                android:text="Temp:"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/forecastingId"/>
+
+            <TextView
+                android:id="@+id/forecastingDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sunday, 3 Jan 2021"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@id/forecastTemp"/>
+            <TextView
+                android:id="@+id/forecastHighText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="15sp"
+                android:text="HIGH:"
+                android:layout_below="@id/forecastingDateText"/>
+
+            <TextView
+                android:id="@+id/forecastLowText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="15sp"
+                android:text="Low:"
+                android:layout_below="@id/forecastingDateText"
+                android:layout_toRightOf="@id/forecastHighText"/>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
