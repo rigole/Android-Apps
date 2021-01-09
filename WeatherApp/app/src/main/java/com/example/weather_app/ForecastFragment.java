@@ -1,13 +1,21 @@
 package com.example.weather_app;
 
+import android.os.Build;
 import android.os.Bundle;
 
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+
+import com.example.weather_app.model.Forecast;
+
+import java.io.Serializable;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,10 +65,34 @@ public class ForecastFragment extends Fragment {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_forecast, container, false);
+         View forecastView = inflater.inflate(R.layout.fragment_forecast, container, false);
+        ImageView forecastIcon = forecastView.findViewById(R.id.forecastingId);
+        TextView forecastTemp = forecastView.findViewById(R.id.forecastTemp);
+        TextView forecastDate = forecastView.findViewById(R.id.forecastingDateText);
+        TextView forecastHigh = forecastView.findViewById(R.id.forecastHighText);
+        TextView forecastLow = forecastView.findViewById(R.id.forecastLowText);
+        TextView forecastDescripton = forecastView.findViewById(R.id.forecastDescriptionTextview);
+
+        Forecast forecast = (Forecast) getArguments().getBinder("forecast");
+        forecastTemp.setText(forecast.getCurrentTemperature());
+        forecastDate.setText(forecast.getForecastDate());
+        forecastHigh.setText(forecast.getForecastHighTemp());
+        forecastLow.setText(forecast.getForecastLowTemp());
+        forecastDescripton.setText(forecast.getGetForecastWeatherDescription());
+
+
+        return forecastView;
+    }
+    public static final ForecastFragment newInstance (Forecast forecast){
+        ForecastFragment forecastFragment = new ForecastFragment();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("forecast", (Serializable) forecast);
+        forecastFragment.setArguments(bundle);
+        return forecastFragment;
     }
 }
