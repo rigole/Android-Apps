@@ -26,6 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="368dp"
         android:layout_height="90dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,8 +62,20 @@
             android:layout_toRightOf="@id/locationTextViewId"
             android:text="19F"
             android:textSize="45sp"/>
-
-
     </RelativeLayout>
     </androidx.cardview.widget.CardView>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="282dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        android:layout_marginRight="8dp">
+
+    </androidx.viewpager.widget.ViewPager>
 </androidx.constraintlayout.widget.ConstraintLayout>

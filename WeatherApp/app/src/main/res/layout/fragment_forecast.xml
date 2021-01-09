@@ -7,7 +7,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="350dp"
-        android:layout_height="210dp"
+        android:layout_height="220dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         app:cardElevation="12dp">
@@ -60,6 +60,18 @@
                 android:text="Low:"
                 android:layout_below="@id/forecastingDateText"
                 android:layout_toRightOf="@id/forecastHighText"/>
+
+            <TextView
+                android:id="@+id/forecastDescriptionTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/forecastHighText"
+                android:layout_centerHorizontal="true"
+                android:text="Mostly Cloudly"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:layout_marginTop="5dp"/>
+
 
 
         </RelativeLayout>
